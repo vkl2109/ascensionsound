@@ -1,14 +1,31 @@
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as React from 'react';
+import { Button } from '@rneui/themed';
 
 const screenWidth = Dimensions.get('window').width; 
 
-export default function Splash () {
+export default function Splash ({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollview} >
-                <Text>Splash</Text>
+                <Button
+                    title={"Get Started"}
+                    buttonStyle={{
+                        backgroundColor: '#FFA500',
+                        borderColor: 'transparent',
+                        borderWidth: 0,
+                        borderRadius: 30,
+                    }}
+                    containerStyle={{
+                        width: 150,
+                        height: 50,
+                        marginHorizontal: 50,
+                        marginVertical: 10,
+                    }}
+                    titleStyle={{ fontWeight: 'bold' }}
+                    onPress={() => navigation.navigate('Login')}
+                    />
             </ScrollView>
         </SafeAreaView>
     )
