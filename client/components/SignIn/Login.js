@@ -8,7 +8,7 @@ export default function Login () {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollview} >
-                <Text>Login</Text>
+                <Text>{process.env.SERVER_URL}</Text>
             </ScrollView>
         </SafeAreaView>
     )
