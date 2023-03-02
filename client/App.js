@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider as PaperProvider } from 'react-native-paper';
 import Login from './components/SignIn/Login'
 import Signup from './components/SignIn/Signup'
 import Splash from './components/SignIn/Splash'
@@ -11,6 +12,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <SafeAreaProvider>
+      <PaperProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false, gestureEnabled: true }}>
           <Stack.Screen name="Splash" component={Splash} />
@@ -18,6 +20,7 @@ export default function App() {
           <Stack.Screen name="Signup" component={Signup} />
         </Stack.Navigator>
       </NavigationContainer>
+      </PaperProvider>
     </SafeAreaProvider>
   );
 }
